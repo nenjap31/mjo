@@ -1,0 +1,8 @@
+{"identifier":"APP_MAIN","level":"fatal","message":"http: Server closed","timestamp":"2022-01-24T10:05:53+07:00"}
+{"level":"info","message":"[AUTH CONTROLLER] Login - Login successfull","timestamp":"2022-01-24T10:06:49+07:00"}
+{"identifier":"APP_MAIN","level":"fatal","message":"http: Server closed","timestamp":"2022-01-24T10:10:45+07:00"}
+{"identifier":"APP_MAIN","level":"fatal","message":"http: Server closed","timestamp":"2022-01-24T10:29:04+07:00"}
+{"identifier":"APP_MAIN","level":"fatal","message":"http: Server closed","timestamp":"2022-01-24T10:32:56+07:00"}
+{"identifier":"APP_MAIN","level":"fatal","message":"http: Server closed","timestamp":"2022-01-24T10:36:48+07:00"}
+{"identifier":"APP_MAIN","level":"fatal","message":"http: Server closed","timestamp":"2022-01-24T10:55:57+07:00"}
+{"identifier":"APP_MAIN","level":"fatal","message":"http: Server closed","timestamp":"2022-01-24T10:57:58+07:00"}
