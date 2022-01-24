@@ -191,7 +191,7 @@ func (repository Repository) MonthlyReport(merchant_id uint,startdate string, en
 
 func (repository Repository) MonthlyOutletReport(merchant_id uint,startdate string, enddate string, limit int, offset int) ([]*defined.ReportOutlet, error) {
 	monthlyoutletreport := []*MonthlyTrxOutletReport{}
-	_ = repository.db.Raw("select merchants.merchant_name,outlets.outlet_name,DATE_FORMAT(transactions.created_at,'%Y-%m-%d')as date,sum(bill_total)as omzet FROM transactions LEFT JOIN merchants on merchants.id = transactions.merchant_id LEFT JOIN outlets on outlets.id = transactions.outlet_id WHERE transactions.merchant_id=? AND transactions.created_at between ? and ? GROUP BY transactions.outlet_id, transactions.created_at order by transactions.created_at LIMIT ? OFFSET ?", merchant_id, startdate, enddate, limit, offset).Scan(&monthlyoutletreport)
+	_ = repository.db.Raw("select merchants.merchant_name,outlets.outlet_name,DATE_FORMAT(transactions.created_at,'%Y-%m-%d')as date,sum(bill_total)as omzet FROM transactions LEFT JOIN merchants on merchants.id = transactions.merchant_id LEFT JOIN outlets on outlets.id = transactions.outlet_id WHERE outlet.merchant_id=? AND transactions.created_at between ? and ? GROUP BY transactions.outlet_id, transactions.created_at order by transactions.created_at LIMIT ? OFFSET ?", merchant_id, startdate, enddate, limit, offset).Scan(&monthlyoutletreport)
 	result := []*defined.ReportOutlet{}
 	for _, data := range monthlyoutletreport {
 		newData := data.Map()
